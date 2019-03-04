@@ -7,7 +7,9 @@ import { CreateUpdateComponent } from './components/create-update/create-update.
 import { ListComponent } from './components/list/list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule , MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,12 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
