@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule , MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+import { StudentService } from './shared/student.service';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CdkTableModule } from '@angular/cdk/table';
 import 'hammerjs';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +25,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -28,9 +34,11 @@ import 'hammerjs';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    CdkTableModule
   ],
-  providers: [],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

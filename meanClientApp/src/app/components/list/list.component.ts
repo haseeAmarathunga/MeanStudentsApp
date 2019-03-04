@@ -1,3 +1,5 @@
+import { Student } from './../../student';
+import { StudentService } from './../../shared/student.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  public students:Student[];
+  constructor(private _studentService: StudentService) { }
 
   ngOnInit() {
+    this.readStudents();
   }
 
+  readStudents(){
+    this._studentService.readStudent().subscribe(
+      data=>{
+        console.log(data);
+        this.students = data['msg'];
+      } ,
+      error=>{
+        console.log(error);
+      }
+    )
+  }
 }

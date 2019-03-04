@@ -1,3 +1,15 @@
-<p>
-  list works!
-</p>
+<table>
+  <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+  </thead>
+  <tr *ngFor="let student of students">
+    <td>{{student._id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.age}}</td>
+
+  </tr>
+</table>
